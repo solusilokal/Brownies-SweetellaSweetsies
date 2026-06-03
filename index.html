@@ -71,10 +71,16 @@
             transform: scale(1);
         }
 
-        /* Image Slider Styles - DIPERBARUI UNTUK MOBILE */
-        .slider-container { position: relative; width: 100%; height: 100%; overflow: hidden; }
+        /* Image Slider Styles - DIPERBARUI AGAR SELARAS DAN TIDAK JOMPLANG */
+        /* Menghapus height: 100% agar div tunduk pada aspect ratio bawaan Tailwind (aspect-[4/5]) */
+        .slider-container { position: relative; width: 100%; overflow: hidden; }
         .slider-wrapper { display: flex; transition: transform 0.4s ease-in-out; height: 100%; }
-        .slider-slide { min-width: 100%; height: 100%; object-fit: cover; }
+        
+        /* .slider-slide kini menjadi div kontainer dengan overflow: hidden */
+        .slider-slide { min-width: 100%; height: 100%; overflow: hidden; position: relative; }
+        
+        /* Mengatur agar gambar di dalam slide terpotong rapi saat di-zoom */
+        .slider-slide img { width: 100%; height: 100%; object-fit: cover; }
         
         /* Mengubah slider-btn agar selalu terlihat (opacity: 0.85) dan sedikit lebih besar untuk disentuh di HP */
         .slider-btn { 
@@ -121,7 +127,7 @@
             
             <!-- Area Logo -->
             <a href="#" class="flex items-center gap-3 flex-shrink-0 drop-shadow-md pl-1 md:pl-2">
-                <img src="gambarasset/Gambar1Logo.webp" onerror="this.src='https://placehold.co/100x100/D4A373/FFFFFF?text=Logo&font=playfair'" alt="Logo Sweetella" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                <img src="gambarasset/Gambar1Logo.png" onerror="this.src='https://placehold.co/100x100/D4A373/FFFFFF?text=Logo&font=playfair'" alt="Logo Sweetella" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
                 <span class="text-lg md:text-2xl font-serif font-bold text-white tracking-wide">Sweetella<span class="text-sweet-gold">Sweeties</span></span>
             </a>
 
@@ -163,13 +169,12 @@
             <div class="w-full md:w-2/3 lg:w-3/5 fade-in-up appear">
                 <span class="text-sweet-gold font-semibold tracking-wider uppercase text-sm mb-4 block">B2B Pastry Partner</span>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
-                    Lengkapi Sajian Kopi Anda dengan <span class="text-sweet-gold italic">Brownies Premium</span> Kami.
+                    Lengkapi Sajian <span class="text-sweet-gold italic">Coffee Shop </span> Anda dengan <span class="text-sweet-gold italic">Brownies Premium</span> Kami.
                 </h1>
                 <p class="text-gray-200 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl">
                     Mitra supply pastry terpercaya untuk coffee shop. Tingkatkan margin keuntungan bisnis Anda dengan produk berkualitas tinggi, rasa yang konsisten, dan harga spesial khusus mitra B2B.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <!-- PERUBAHAN: href diarahkan ke #katalog -->
                     <a href="#katalog" class="bg-sweet-gold hover:bg-sweet-gold-hover text-white font-medium py-3 px-8 rounded-full transition transform hover:-translate-y-1 shadow-lg text-center">
                         Minta Sampel Gratis
                     </a>
@@ -186,7 +191,7 @@
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="w-full lg:w-1/2 relative fade-in-up">
                     <div class="absolute inset-0 bg-sweet-gold rounded-2xl transform translate-x-4 translate-y-4"></div>
-                    <img src="gambarasset/Gambarprofile.webp" alt="Coffee Shop Environment" class="relative z-10 w-full h-auto rounded-2xl shadow-xl object-cover" />
+                    <img src="gambarasset/Gambarprofile.png" alt="Coffee Shop Environment" class="relative z-10 w-full h-auto rounded-2xl shadow-xl object-cover" />
                 </div>
                 <div class="w-full lg:w-1/2 fade-in-up">
                     <h2 class="text-3xl md:text-4xl font-serif font-bold text-sweet-dark mb-6 leading-tight">
@@ -222,7 +227,7 @@
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 font-serif">Misi</h3>
-                    <ul class="text-gray-300 leading-relaxed space-y-3 list-disc list-inside">
+                    <ul class="text-gray-300 leading-relaxed space-y-3 list-disc list-outside pl-5">
                         <li>Menyediakan produk brownies berkualitas dengan bahan baku premium yang terkurasi.</li>
                         <li>Memberikan layanan kemitraan yang transparan, fleksibel, dan saling menguntungkan.</li>
                         <li>Memastikan standar produksi yang higienis dan konsisten di setiap batch.</li>
@@ -242,20 +247,33 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center max-w-5xl mx-auto">
-                <!-- Produk 1 -->
+                <!-- Produk 1: Bite Size (Diperbaiki agar selaras) -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 fade-in-up text-left flex flex-col">
                     <div class="aspect-[4/5] bg-gray-200 relative slider-container" data-slide-index="0">
                         <div class="slider-wrapper">
-                            <img src="gambarasset/Gambar3a.webp" alt="Bite Size 1" class="slider-slide">
-                            <img src="gambarasset/Gambar3b.webp" alt="Bite Size 2" class="slider-slide">
-                            <img src="gambarasset/Gambar3c.webp" alt="Bite Size 3" class="slider-slide">
-                            <img src="gambarasset/Gambar3d.webp" alt="Bite Size 4" class="slider-slide">
-                            <img src="gambarasset/Gambar3e.webp" alt="Bite Size 5" class="slider-slide">
-                            <img src="gambarasset/Gambar3f.webp" alt="Bite Size 6" class="slider-slide">
+                            <!-- REVISI: Menghilangkan transform scale-[1.25] agar foto sejajar dan konsisten dengan kelas standar hover:scale-105 -->
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar3a.png" alt="Bite Size 1" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar3b.png" alt="Bite Size 2" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar3c.png" alt="Bite Size 3" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar3d.png" alt="Bite Size 4" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar3e.png" alt="Bite Size 5" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar3f.png" alt="Bite Size 6" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
                         </div>
                         <button class="slider-btn slider-btn-prev" onclick="moveSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn slider-btn-next" onclick="moveSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
-                        <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-sweet-dark z-20">5x5 cm</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-sweet-dark z-20 shadow-sm">5x5 cm</div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Bite Size (5x5cm)</h3>
@@ -268,16 +286,26 @@
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 fade-in-up text-left flex flex-col delay-100">
                     <div class="aspect-[4/5] bg-gray-200 relative slider-container" data-slide-index="0">
                         <div class="slider-wrapper">
-                            <img src="gambarasset/Gmbar2a.webp" alt="Medium Slice 1" class="slider-slide">
-                            <img src="gambarasset/Gmbar2b.webp" alt="Medium Slice 2" class="slider-slide">
-                            <img src="gambarasset/Gmbar2c.webp" alt="Medium Slice 3" class="slider-slide">
-                            <img src="gambarasset/Gmbar2d.webp" alt="Medium Slice 4" class="slider-slide">
-                            <img src="gambarasset/Gmbar2e.webp" alt="Medium Slice 5" class="slider-slide">
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gmbar2a.png" alt="Medium Slice 1" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gmbar2b.png" alt="Medium Slice 2" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gmbar2c.png" alt="Medium Slice 3" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gmbar2d.png" alt="Medium Slice 4" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gmbar2e.png" alt="Medium Slice 5" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
                         </div>
                         <button class="slider-btn slider-btn-prev" onclick="moveSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn slider-btn-next" onclick="moveSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
                         <div class="absolute top-4 right-4 bg-sweet-gold px-3 py-1 rounded-full text-xs font-bold text-white shadow-md z-20">Best Seller</div>
-                        <div class="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-sweet-dark z-20">5x10 cm</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-sweet-dark z-20 shadow-sm">5x10 cm</div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Medium Slice (5x10cm)</h3>
@@ -290,19 +318,101 @@
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 fade-in-up text-left flex flex-col delay-200">
                     <div class="aspect-[4/5] bg-gray-200 relative slider-container" data-slide-index="0">
                         <div class="slider-wrapper">
-                            <img src="gambarasset/Gambar1a.webp" alt="Signature Portion 1" class="slider-slide">
-                            <img src="gambarasset/Gambar1b.webp" alt="Signature Portion 2" class="slider-slide">
-                            <img src="gambarasset/Gambar1d.webp" alt="Signature Portion 3" class="slider-slide">
-                            <img src="gambarasset/Gambar1e.webp" alt="Signature Portion 4" class="slider-slide">
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar1a.png" alt="Signature Portion 1" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar1b.png" alt="Signature Portion 2" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar1d.png" alt="Signature Portion 3" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Gambar1e.png" alt="Signature Portion 4" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
                         </div>
                         <button class="slider-btn slider-btn-prev" onclick="moveSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
                         <button class="slider-btn slider-btn-next" onclick="moveSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
-                        <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-sweet-dark z-20">10x10 cm</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-sweet-dark z-20 shadow-sm">10x10 cm</div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Signature Portion (10x10cm)</h3>
                         <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Cocok Untuk:</span><p class="text-gray-700 text-sm">Porsi sharing atau hadiah (hampers) berukuran sedang.</p></div>
                         <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Topping:</span><p class="text-gray-600 text-sm">Almond, Original, Choco Chips, Kacang, dan Keju. (Made By Request)</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fade-in-up mt-24 mb-16">
+                <span class="text-sweet-gold font-semibold tracking-wider uppercase text-sm mb-2 block">Exclusive Taste</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-sweet-dark mb-4">Varian Produk Signature SweetellaSweeties</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Koleksi rasa istimewa dengan bahan baku premium pilihan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center max-w-5xl mx-auto">
+                <!-- Signature 1: Brownies Bites -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 fade-in-up text-left flex flex-col">
+                    <div class="aspect-[4/5] bg-gray-200 relative slider-container" data-slide-index="0">
+                        <div class="slider-wrapper">
+                            <div class="slider-slide">
+                                <img src="gambarasset/Bites1.webp" onerror="this.src='https://placehold.co/400x500/3E2723/FFFFFF?text=Brownies+Bites'" alt="Brownies Bites 1" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Bites2.webp" onerror="this.src='https://placehold.co/400x500/3E2723/FFFFFF?text=Brownies+Bites+2'" alt="Brownies Bites 2" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <button class="slider-btn slider-btn-prev" onclick="moveSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn slider-btn-next" onclick="moveSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="absolute top-4 right-4 bg-sweet-dark px-3 py-1 rounded-full text-xs font-bold text-sweet-gold shadow-md z-20">Premium</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Brownies Bites</h3>
+                        <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Karakteristik:</span><p class="text-gray-700 text-sm">Kemasan praktis berisi potongan-potongan bite-size premium yang fudgy dan lumer di mulut, sangat mudah dinikmati.</p></div>
+                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Sangat cocok untuk ngemil santai, teman nugas, atau pendamping cepat saji kopi susu.</p></div>
+                    </div>
+                </div>
+
+                <!-- Signature 2: Brownies Box 20x10 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 fade-in-up text-left flex flex-col delay-100">
+                    <div class="aspect-[4/5] bg-gray-200 relative slider-container" data-slide-index="0">
+                        <div class="slider-wrapper">
+                            <div class="slider-slide">
+                                <img src="gambarasset/Box1.webp" onerror="this.src='https://placehold.co/400x500/D4A373/FFFFFF?text=Box+20x10'" alt="Box 20x10 1" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/box2.webp" onerror="this.src='https://placehold.co/400x500/D4A373/FFFFFF?text=Box+20x10+2'" alt="Box 20x10 2" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <button class="slider-btn slider-btn-prev" onclick="moveSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn slider-btn-next" onclick="moveSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="absolute top-4 right-4 bg-sweet-dark px-3 py-1 rounded-full text-xs font-bold text-sweet-gold shadow-md z-20">Premium</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Brownies Box (20x10)</h3>
+                        <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Karakteristik:</span><p class="text-gray-700 text-sm">Dikemas dalam box berukuran 20x10 cm yang elegan. Menawarkan porsi ideal untuk dinikmati berdua atau sebagai bingkisan manis.</p></div>
+                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Pilihan tepat untuk hampers mini, gift box kafe, atau menu sharing andalan di etalase Anda.</p></div>
+                    </div>
+                </div>
+
+                <!-- Signature 3: Brownies Bigbox 20x20 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 fade-in-up text-left flex flex-col delay-200">
+                    <div class="aspect-[4/5] bg-gray-200 relative slider-container" data-slide-index="0">
+                        <div class="slider-wrapper">
+                            <div class="slider-slide">
+                                <img src="gambarasset/Bigbox1.webp" onerror="this.src='https://placehold.co/400x500/5D4037/FFFFFF?text=Bigbox+20x20'" alt="Bigbox 20x20 1" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="gambarasset/Bigbox2.webp" onerror="this.src='https://placehold.co/400x500/5D4037/FFFFFF?text=Bigbox+20x20+2'" alt="Bigbox 20x20 2" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <button class="slider-btn slider-btn-prev" onclick="moveSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn slider-btn-next" onclick="moveSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="absolute top-4 right-4 bg-sweet-dark px-3 py-1 rounded-full text-xs font-bold text-sweet-gold shadow-md z-20">Premium</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Brownies Bigbox (20x20)</h3>
+                        <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Karakteristik:</span><p class="text-gray-700 text-sm">Ukuran loyang besar 20x20 cm dalam kemasan box eksklusif. Menawarkan kepuasan ekstra dan bisa dikombinasikan dengan berbagai varian topping.</p></div>
+                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Sangat disarankan untuk acara spesial, perayaan keluarga, atau hampers premium hari raya.</p></div>
                     </div>
                 </div>
             </div>
@@ -374,7 +484,7 @@
                 </div>
             </div>
 
-            <!-- PERUBAHAN: GALERI SCREENSHOT 11 GAMBAR 9:16 -->
+            <!-- GALERI SCREENSHOT 11 GAMBAR 9:16 -->
             <div class="fade-in-up border-t border-sweet-gold/20 pt-12">
                 <h3 class="text-2xl font-serif font-bold text-sweet-dark mb-8">Bukti Kepuasan Pelanggan</h3>
                 
@@ -385,47 +495,47 @@
                     
                     <!-- Item 1 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS1.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+1'" alt="Screenshot Testimoni 1" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS1.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+1'" alt="Screenshot Testimoni 1" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 2 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS2.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+2'" alt="Screenshot Testimoni 2" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS2.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+2'" alt="Screenshot Testimoni 2" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 3 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS3.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+3'" alt="Screenshot Testimoni 3" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS3.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+3'" alt="Screenshot Testimoni 3" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 4 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS4.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+4'" alt="Screenshot Testimoni 4" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS4.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+4'" alt="Screenshot Testimoni 4" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 5 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS5.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+5'" alt="Screenshot Testimoni 5" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS5.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+5'" alt="Screenshot Testimoni 5" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 6 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS6.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+6'" alt="Screenshot Testimoni 6" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS6.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+6'" alt="Screenshot Testimoni 6" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 7 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS7.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+7'" alt="Screenshot Testimoni 7" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS7.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+7'" alt="Screenshot Testimoni 7" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 8 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS8.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+8'" alt="Screenshot Testimoni 8" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS8.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+8'" alt="Screenshot Testimoni 8" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 9 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS9.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+9'" alt="Screenshot Testimoni 9" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS9.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+9'" alt="Screenshot Testimoni 9" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 10 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS10.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+10'" alt="Screenshot Testimoni 10" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS10.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+10'" alt="Screenshot Testimoni 10" class="w-full h-full object-cover">
                     </div>
                     <!-- Item 11 -->
                     <div class="flex-none w-[200px] md:w-[240px] aspect-[9/16] rounded-xl overflow-hidden shadow-md snap-center bg-gray-200">
-                        <img src="gambarasset/SS11.webp" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+11'" alt="Screenshot Testimoni 11" class="w-full h-full object-cover">
+                        <img src="gambarasset/SS11.png" onerror="this.src='https://placehold.co/400x711/D4A373/FFFFFF?text=Testimoni+11'" alt="Screenshot Testimoni 11" class="w-full h-full object-cover">
                     </div>
 
                 </div>
@@ -461,7 +571,7 @@
             <div class="border-t border-sweet-brown/50 pt-6 flex flex-col md:flex-row justify-between items-center text-sm gap-4">
                 <p>&copy; 2026 Sweetella Sweeties. All rights reserved.</p>
                 <p>
-                    Website Development by 
+                    Built by 
                     <a href="https://solusilokal.id" target="_blank" rel="noopener noreferrer" class="text-sweet-gold hover:text-white font-bold transition duration-300">
                         SolusiLokal.ID
                     </a>
