@@ -114,6 +114,40 @@
             .floating-wa-btn span { display: none; }
         }
 
+        /* Floating Instagram Button Styles */
+        .floating-ig-btn {
+            position: fixed; bottom: 105px; right: 30px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white;
+            padding: 16px; border-radius: 50px; display: flex; align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); overflow: hidden;
+        }
+        .floating-ig-btn:hover { padding: 16px 28px 16px 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); filter: brightness(1.1); }
+        .floating-ig-btn i { font-size: 1.8rem; line-height: 1; transition: transform 0.3s ease; }
+        .floating-ig-btn:hover i { transform: scale(1.1); }
+        .floating-ig-btn span { font-size: 1.1rem; font-weight: 700; white-space: nowrap; max-width: 0; opacity: 0; margin-left: 0; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        .floating-ig-btn:hover span { max-width: 250px; opacity: 1; margin-left: 12px; }
+        @media (max-width: 640px) {
+            .floating-ig-btn { bottom: 95px; right: 20px; padding: 16px; }
+            .floating-ig-btn span { display: none; }
+        }
+
+        /* FAQ Animation Styles */
+        .faq-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq-item.active .faq-content {
+            max-height: 500px;
+            padding-bottom: 1.5rem; /* Menambahkan ruang di bawah teks saat terbuka */
+        }
+        .faq-item i {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active i {
+            transform: rotate(180deg);
+        }
+
         /* Menyembunyikan scrollbar untuk galeri testimoni */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -278,7 +312,10 @@
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Bite Size (5x5cm)</h3>
                         <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Cocok Untuk:</span><p class="text-gray-700 text-sm">Snack box, suguhan rapat, atau pelengkap kopi harian di kafe.</p></div>
-                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Topping:</span><p class="text-gray-600 text-sm">Almond, Redvevlet with Silverqueen, Keju, Choco Chips, Kacang, dan Original. (Made By Request)</p></div>
+                        <div class="mb-5"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Topping:</span><p class="text-gray-600 text-sm">Almond, Redvevlet with Silverqueen, Keju, Choco Chips, Kacang, dan Original. (Made By Request)</p></div>
+                        <a href="https://wa.me/6282358908771?text=Halo%20Sweetella%2C%20saya%20tertarik%20dengan%20produk%20*Bite%20Size%20(5x5cm)*%20dan%20mau%20info%20harga%20B2B%20beserta%20kebutuhan%20lebih%20lanjut." target="_blank" class="mt-auto w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2.5 px-4 rounded-xl transition duration-300 shadow flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Tanya Info & Harga
+                        </a>
                     </div>
                 </div>
 
@@ -310,7 +347,10 @@
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Medium Slice (5x10cm)</h3>
                         <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Cocok Untuk:</span><p class="text-gray-700 text-sm">Ukuran personal yang pas untuk dessert kafe atau bingkisan mini.</p></div>
-                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Topping:</span><p class="text-gray-600 text-sm">Almond, Original, Choco Chips, Kacang, dan Keju. (Made By Request)</p></div>
+                        <div class="mb-5"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Topping:</span><p class="text-gray-600 text-sm">Almond, Original, Choco Chips, Kacang, dan Keju. (Made By Request)</p></div>
+                        <a href="https://wa.me/6282358908771?text=Halo%20Sweetella%2C%20saya%20tertarik%20dengan%20produk%20*Medium%20Slice%20(5x10cm)*%20dan%20mau%20info%20harga%20B2B%20beserta%20kebutuhan%20lebih%20lanjut." target="_blank" class="mt-auto w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2.5 px-4 rounded-xl transition duration-300 shadow flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Tanya Info & Harga
+                        </a>
                     </div>
                 </div>
 
@@ -338,7 +378,10 @@
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Signature Portion (10x10cm)</h3>
                         <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Cocok Untuk:</span><p class="text-gray-700 text-sm">Porsi sharing atau hadiah (hampers) berukuran sedang.</p></div>
-                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Topping:</span><p class="text-gray-600 text-sm">Almond, Original, Choco Chips, Kacang, dan Keju. (Made By Request)</p></div>
+                        <div class="mb-5"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Topping:</span><p class="text-gray-600 text-sm">Almond, Original, Choco Chips, Kacang, dan Keju. (Made By Request)</p></div>
+                        <a href="https://wa.me/6282358908771?text=Halo%20Sweetella%2C%20saya%20tertarik%20dengan%20produk%20*Signature%20Portion%20(10x10cm)*%20dan%20mau%20info%20harga%20B2B%20beserta%20kebutuhan%20lebih%20lanjut." target="_blank" class="mt-auto w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2.5 px-4 rounded-xl transition duration-300 shadow flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Tanya Info & Harga
+                        </a>
                     </div>
                 </div>
             </div>
@@ -368,7 +411,10 @@
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Brownies Bites</h3>
                         <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Karakteristik:</span><p class="text-gray-700 text-sm">Kemasan praktis berisi potongan-potongan bite-size premium yang fudgy dan lumer di mulut, sangat mudah dinikmati.</p></div>
-                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Sangat cocok untuk ngemil santai, teman nugas, atau pendamping cepat saji kopi susu.</p></div>
+                        <div class="mb-5"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Sangat cocok untuk ngemil santai, teman nugas, atau pendamping cepat saji kopi susu.</p></div>
+                        <a href="https://wa.me/6282358908771?text=Halo%20Sweetella%2C%20saya%20tertarik%20dengan%20produk%20*Brownies%20Bites*%20dan%20mau%20info%20harga%20B2B%20beserta%20kebutuhan%20lebih%20lanjut." target="_blank" class="mt-auto w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2.5 px-4 rounded-xl transition duration-300 shadow flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Tanya Info & Harga
+                        </a>
                     </div>
                 </div>
 
@@ -390,7 +436,10 @@
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Brownies Box (20x10)</h3>
                         <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Karakteristik:</span><p class="text-gray-700 text-sm">Dikemas dalam box berukuran 20x10 cm yang elegan. Menawarkan porsi ideal untuk dinikmati berdua atau sebagai bingkisan manis.</p></div>
-                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Pilihan tepat untuk hampers mini, gift box kafe, atau menu sharing andalan di etalase Anda.</p></div>
+                        <div class="mb-5"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Pilihan tepat untuk hampers mini, gift box kafe, atau menu sharing andalan di etalase Anda.</p></div>
+                        <a href="https://wa.me/6282358908771?text=Halo%20Sweetella%2C%20saya%20tertarik%20dengan%20produk%20*Brownies%20Box%20(20x10)*%20dan%20mau%20info%20harga%20B2B%20beserta%20kebutuhan%20lebih%20lanjut." target="_blank" class="mt-auto w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2.5 px-4 rounded-xl transition duration-300 shadow flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Tanya Info & Harga
+                        </a>
                     </div>
                 </div>
 
@@ -412,7 +461,10 @@
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-serif font-bold text-sweet-dark mb-3">Brownies Bigbox (20x20)</h3>
                         <div class="mb-4"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Karakteristik:</span><p class="text-gray-700 text-sm">Ukuran loyang besar 20x20 cm dalam kemasan box eksklusif. Menawarkan kepuasan ekstra dan bisa dikombinasikan dengan berbagai varian topping.</p></div>
-                        <div class="mt-auto"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Sangat disarankan untuk acara spesial, perayaan keluarga, atau hampers premium hari raya.</p></div>
+                        <div class="mb-5"><span class="text-xs font-semibold text-sweet-gold uppercase tracking-wider block mb-1">Saran Penyajian:</span><p class="text-gray-600 text-sm">Sangat disarankan untuk acara spesial, perayaan keluarga, atau hampers premium hari raya.</p></div>
+                        <a href="https://wa.me/6282358908771?text=Halo%20Sweetella%2C%20saya%20tertarik%20dengan%20produk%20*Brownies%20Bigbox%20(20x20)*%20dan%20mau%20info%20harga%20B2B%20beserta%20kebutuhan%20lebih%20lanjut." target="_blank" class="mt-auto w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2.5 px-4 rounded-xl transition duration-300 shadow flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Tanya Info & Harga
+                        </a>
                     </div>
                 </div>
             </div>
@@ -470,7 +522,7 @@
         <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
             <h2 class="text-3xl md:text-4xl font-serif font-bold text-sweet-dark mb-4 fade-in-up">Apa Kata Mereka Tentang Kami?</h2>
             
-            <!-- Grid Testimoni Teks (Asli) -->
+            <!-- Grid Testimoni Teks (Asli + 5 Tambahan) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-16">
                 <div class="bg-white p-8 rounded-2xl shadow-lg text-left fade-in-up">
                     <div class="flex text-sweet-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -482,6 +534,27 @@
                     <p class="text-gray-700 mb-6 italic">"Varian Brownies Bites-nya super praktis, cokelatnya kerasa premium, lumer di mulut dan bikin mood naik."</p>
                     <h4 class="font-bold text-sweet-dark font-serif text-lg">Nadine Aurelia</h4><p class="text-xs text-gray-500 uppercase tracking-wider">Mahasiswa / Pembeli</p>
                 </div>
+                
+                <!-- 5 Testimoni Tambahan -->
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-left fade-in-up">
+                    <div class="flex text-sweet-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-700 mb-6 italic">"Pengiriman selalu on-time dan aman. Varian Bigbox paling laris untuk menu sharing keluarga di akhir pekan."</p>
+                    <h4 class="font-bold text-sweet-dark font-serif text-lg">Rina Amelia</h4><p class="text-xs text-gray-500 uppercase tracking-wider">Mahasiswa</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-left fade-in-up delay-100">
+                    <div class="flex text-sweet-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-700 mb-6 italic">"Rasa cokelatnya beneran premium, nggak murahan. Pas banget buat nemenin ngopi sore-sore."</p>
+                    <h4 class="font-bold text-sweet-dark font-serif text-lg">Dimas Pratama</h4><p class="text-xs text-gray-500 uppercase tracking-wider">Pelanggan Setia</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-left fade-in-up delay-200">
+                    <div class="flex text-sweet-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-700 mb-6 italic">"Pesan dalam jumlah besar buat acara kantor, kualitasnya tetap terjaga. Ukuran bite size-nya elegan banget buat snack box."</p>
+                    <h4 class="font-bold text-sweet-dark font-serif text-lg">Siska Wulandari</h4><p class="text-xs text-sweet-gold uppercase tracking-wider">Event Organizer</p>
+                </div>
+
             </div>
 
             <!-- GALERI SCREENSHOT 11 GAMBAR 9:16 -->
@@ -544,6 +617,73 @@
         </div>
     </section>
 
+    <!-- SECTION FAQ -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-sweet-gold font-semibold tracking-wider uppercase text-sm mb-2 block">Pertanyaan Umum</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-sweet-dark mb-4">Frequently Asked Questions (FAQ)</h2>
+            </div>
+            
+            <div class="space-y-4 fade-in-up delay-100">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-sweet-cream/30 border border-sweet-gold/30 rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="flex justify-between items-center p-6" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sweet-dark text-lg pr-4">Apakah ada Minimal Order (MOQ) untuk mitra B2B?</h3>
+                        <i class="fas fa-chevron-down text-sweet-gold text-xl"></i>
+                    </div>
+                    <div class="faq-content px-6 text-gray-700">
+                        <p>Ya, untuk menjaga harga khusus grosir (B2B), kami menerapkan Minimum Order Quantity. Detail MOQ sangat fleksibel dan dapat didiskusikan lebih lanjut via WhatsApp sesuai dengan kapasitas dan kebutuhan harian coffee shop Anda.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-sweet-cream/30 border border-sweet-gold/30 rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="flex justify-between items-center p-6" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sweet-dark text-lg pr-4">Berapa lama daya tahan brownies Sweetella Sweeties?</h3>
+                        <i class="fas fa-chevron-down text-sweet-gold text-xl"></i>
+                    </div>
+                    <div class="faq-content px-6 text-gray-700">
+                        <p>Brownies kami dirancang untuk tahan lama dan tetap *fudgy*. Produk dapat bertahan hingga 7 hari di suhu ruang (suhu kafe ber-AC) dan hingga 14 hari jika disimpan di dalam lemari pendingin (chiller) dalam wadah kedap udara.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-sweet-cream/30 border border-sweet-gold/30 rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="flex justify-between items-center p-6" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sweet-dark text-lg pr-4">Apakah bisa request topping khusus di luar katalog?</h3>
+                        <i class="fas fa-chevron-down text-sweet-gold text-xl"></i>
+                    </div>
+                    <div class="faq-content px-6 text-gray-700">
+                        <p>Sangat bisa! Kami melayani *custom topping* (Made by Request) untuk menyesuaikan dengan tema, acara, atau *signature menu* di coffee shop Anda. Silakan diskusikan ide Anda bersama admin kami.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-sweet-cream/30 border border-sweet-gold/30 rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="flex justify-between items-center p-6" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sweet-dark text-lg pr-4">Apakah menyediakan tester atau sampel gratis?</h3>
+                        <i class="fas fa-chevron-down text-sweet-gold text-xl"></i>
+                    </div>
+                    <div class="faq-content px-6 text-gray-700">
+                        <p>Tentu, kami sangat memahami pentingnya kurasi rasa untuk bisnis Anda. Kami menyediakan sampel gratis untuk pemilik F&B/Coffee shop yang serius ingin bermitra. Anda cukup menanggung ongkos kirim atau dapat mengambil langsung di lokasi produksi kami.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item bg-sweet-cream/30 border border-sweet-gold/30 rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="flex justify-between items-center p-6" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sweet-dark text-lg pr-4">Bagaimana dengan sistem pengirimannya?</h3>
+                        <i class="fas fa-chevron-down text-sweet-gold text-xl"></i>
+                    </div>
+                    <div class="faq-content px-6 text-gray-700">
+                        <p>Kami menyediakan layanan pengiriman terjadwal secara rutin (misal: pengiriman setiap 2 hari sekali atau seminggu 2 kali) menggunakan kurir instan/sameday untuk memastikan produk tiba dengan aman dan dalam kondisi segar di etalase Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-sweet-dark border-t border-sweet-brown py-12 text-center text-gray-400">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Social Media & Contact Links -->
@@ -579,6 +719,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Instagram Button -->
+    <a href="https://www.instagram.com/sweetellasweeties" target="_blank" rel="noopener noreferrer" class="floating-ig-btn" aria-label="Kunjungi Instagram Kami">
+        <i class="fab fa-instagram"></i>
+        <span>@sweetellasweeties</span>
+    </a>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/6282358908771" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Hubungi kami di WhatsApp">
@@ -621,6 +767,17 @@
             if (currentIndex >= slides.length) currentIndex = 0;
             container.setAttribute('data-slide-index', currentIndex);
             updateSlider(container);
+        }
+
+        // FAQ Toggle Logic
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            // Menutup FAQ lain jika sedang terbuka (Opsional)
+            document.querySelectorAll('.faq-item').forEach(el => {
+                if (el !== item) el.classList.remove('active');
+            });
+            // Buka/Tutup FAQ yang diklik
+            item.classList.toggle('active');
         }
     </script>
 </body>
